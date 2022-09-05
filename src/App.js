@@ -1,10 +1,12 @@
-import Login from "./pages/Login";
+import Routes from "./routes";
+import { AuthContextProvider } from "./contexts/auth-context";
+import { useAuth } from "./contexts/auth-context";
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <AuthContextProvider>
+      <Routes />
+    </AuthContextProvider>
   );
 }
 

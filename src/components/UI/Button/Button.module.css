@@ -1,13 +1,9 @@
 .button {
-  width: 20rem;
-  height: 4.5rem;
   border: none;
   cursor: pointer;
-  font-size: 2.5rem;
-  color: var(--white);
+  font-size: 2rem;
+  color: var(--black);
   border-radius: 0.5rem;
-  background: var(--black);
+  background: var(--white);
   font-family: var(--montserrat);
-
-  text-transform: uppercase;
 }
