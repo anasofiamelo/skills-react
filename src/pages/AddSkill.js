@@ -2,7 +2,7 @@ import { useState } from "react";
 import API from "../services/API";
 import Button from "../components/UI/Button";
 import Input from "../components/UI/Input";
-import SkillsList from "../components/SkillsList";
+import SkillsList from "../components/Lists/SkillsList";
 
 const PageSkill = () => {
   const [skillName, setSkillName] = useState("");
@@ -26,6 +26,7 @@ const PageSkill = () => {
         placeholder="Skill Name"
       />
       <Button type="submit" button_text="Add" />
+      <SkillsList />
     </form>
   );
 };

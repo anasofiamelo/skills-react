@@ -1,25 +1,29 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useUser } from "../contexts/user-context";
-
+import useFetch from "../hooks/use-fetch";
+import UsersList from "../components/Lists/UsersList";
 const Users = () => {
   const { fetchUsers } = useUser();
   const [users, setUsers] = useState([]);
 
-  const fetchUsersHandler = useCallback(async () => {
-    const response = await fetchUsers();
-    setUsers(response);
-  }, [fetchUsers]);
+  const formatUsers = (data) => {
+    const formattedData = data.map((user) => {
+      return { ...user, key: user.id };
+    });
+
+    setUsers(formattedData);
+  };
+
+  const fetchUsersHandler = useFetch(fetchUsers, formatUsers);
 
   useEffect(() => {
     fetchUsersHandler();
-  }, [fetchUsersHandler]);
+  }, []);
 
   return (
     <>
       <h1>users page</h1>
-      {users.map((user) => (
-        <h1>{user.nome}</h1>
-      ))}
+      <UsersList users_list={users} />
     </>
   );
 };

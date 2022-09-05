@@ -12,7 +12,6 @@ export const AuthContextProvider = (props) => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetchUser(savedId);
-      console.log(response);
       setUser(response);
     }
 
