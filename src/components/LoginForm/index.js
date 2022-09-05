@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../../contexts/auth-context";
 
-import Input from "../UI/Input/Input";
+import Input from "../UI/Input";
 import Button from "../UI/Button";
 import Container from "../UI/Container";
 import Card from "../UI/Card";

@@ -15,8 +15,13 @@ export const UserContextProvider = (props) => {
     return response.data;
   }
 
+  async function fetchUserSkills(id) {
+    const response = await API.get(`/users/${id}/habilidades`);
+    return response.data;
+  }
+
   return (
-    <UserContext.Provider value={{ fetchUser, fetchUsers }}>
+    <UserContext.Provider value={{ fetchUser, fetchUsers, fetchUserSkills }}>
       {props.children}
     </UserContext.Provider>
   );

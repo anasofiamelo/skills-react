@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useUser } from "../contexts/users-context";
+import { useUser } from "../contexts/user-context";
 
 const Users = () => {
   const { fetchUsers } = useUser();

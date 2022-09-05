@@ -1,10 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap");
 html {
+  --text: #293132;
+  --background: #ebf5fc;
+  --navbar-text: #ebf5fc;
+  --navbar-background: #ff686b;
+
+  --contrast: #293132;
+  --opposite-contrast: #ebf5fc;
+  --second-contrast: #ebf5fc;
+  --second-opposite-contrast: #fb6376;
+
+  --purple: #7d84b2;
   --white: #ebf5fc;
   --blue: #32a3b1;
-  --montserrat: "Montserrat", sans-serif;
-  --black: #293241;
+  --black: #39393a;
   --grey: rgba(41, 50, 65, 0.6);
+
+  --standard-font: "Nanum Gothic", sans-serif;
   font-size: 62.5%;
 }
 body {
@@ -14,10 +26,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--black);
-  font-family: var(--montserrat);
-  color: var(--white);
-  padding: 5rem 20%;
+  background-color: var(--background);
+  font-family: var(--standard-font);
+  color: var(--text);
+  padding: 0 20%;
 }
 
 code {
@@ -25,14 +37,6 @@ code {
     monospace;
 }
 
-.main-title {
-  font-size: 4rem;
-  color: var(--black);
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.sub-text {
-  font-size: 1.5rem;
-  color: var(--grey);
+input::placeholder {
+  font-family: var(--standard-font);
 }

@@ -2,8 +2,7 @@
   border: none;
   cursor: pointer;
   font-size: 2rem;
-  color: var(--black);
-  border-radius: 0.5rem;
-  background: var(--white);
+  color: var(--navbar-text);
+  background-color: var(--navbar-background);
   font-family: var(--montserrat);
 }
