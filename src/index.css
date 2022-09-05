@@ -17,6 +17,7 @@ body {
   background-color: var(--black);
   font-family: var(--montserrat);
   color: var(--white);
+  padding: 5rem 20%;
 }
 
 code {

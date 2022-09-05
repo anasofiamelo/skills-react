@@ -10,6 +10,8 @@ const Home = (props) => {
   return (
     <>
       <h1>Hello, {user.nome}</h1>
+      <h4>{user.profileDescription}</h4>
+      <p>{user.email}</p>
       <Button onClick={logout} button_text="logout"></Button>
     </>
   );
