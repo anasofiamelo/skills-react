@@ -1,6 +1,21 @@
+import { useState } from "react";
 import classes from "./Input.module.css";
 
 const Input = (props) => {
+  const [inputValue, setInputValue] = useState("");
+  const [inputIsValid, setInputIsValid] = useState(true);
+
+  const changeInputValueHandler = (e) => {
+    const value = e.target.value;
+    props.onChangeInputValue(value);
+    setInputValue(value);
+    if (value.trim() === "") {
+      setInputIsValid(false);
+      return;
+    }
+    setInputIsValid(true);
+  };
+
   return (
     <div>
       <label htmlFor={props.id}>{props.label}</label>
@@ -8,9 +23,9 @@ const Input = (props) => {
         className={classes.input}
         type={props.type || "text"}
         id={props.id}
-        value={props.value || ""}
+        value={inputValue}
         placeholder={props.placeholder || ""}
-        onChange={props.onChange}
+        onChange={changeInputValueHandler}
         onBlur={props.onBlur}
       />
     </div>

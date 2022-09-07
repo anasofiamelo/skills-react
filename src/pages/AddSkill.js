@@ -1,34 +1,13 @@
-import { useState } from "react";
-import API from "../services/API";
-import Button from "../components/UI/Button";
-import Input from "../components/UI/Input";
 import SkillsList from "../components/Lists/SkillsList";
+import SkillForm from "../components/SkillForm";
 
-const PageSkill = () => {
-  const [skillName, setSkillName] = useState("");
-  function changeSkillNameHandler(event) {
-    setSkillName(event.target.value);
-  }
-
-  async function submitSkillHandler(event) {
-    event.preventDefault();
-    const response = await API.post(`/cria-habilidade`, {
-      habilidade: skillName,
-    });
-    console.log(response);
-  }
-
+const AddSkill = () => {
   return (
-    <form onSubmit={submitSkillHandler}>
-      <Input
-        value={skillName}
-        onChange={changeSkillNameHandler}
-        placeholder="Skill Name"
-      />
-      <Button type="submit" button_text="Add" />
+    <>
+      <SkillForm />
       <SkillsList />
-    </form>
+    </>
   );
 };
 
-export default PageSkill;
+export default AddSkill;

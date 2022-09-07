@@ -1,5 +1,3 @@
-// import { useCallback } from "react";
-
 const useFetch = (fetchDataFunction, applyData) => {
   const fetchHandler = async () => {
     try {
