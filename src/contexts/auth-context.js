@@ -7,12 +7,14 @@ const AuthContext = createContext({});
 export const AuthContextProvider = (props) => {
   const history = useHistory();
   const [user, setUser] = useState(null);
+  const [isLogged, setIsLogged] = useState(null);
   const [savedId, setSavedId] = useState(localStorage.getItem("id"));
-
+  console.log(isLogged);
   useEffect(() => {
     async function fetchData() {
       const response = await fetchUser(savedId);
       setUser(response);
+      setIsLogged(true);
     }
 
     if (savedId) {
@@ -31,12 +33,14 @@ export const AuthContextProvider = (props) => {
     setSavedId(userData.id);
     setUser(userData);
     history.replace("/home");
+    setIsLogged(true);
   }
 
-  async function logoutHandler() {
+  async function logout() {
     localStorage.clear();
     setSavedId(null);
     setUser(null);
+    setIsLogged(false);
     history.replace("/signin");
   }
 
@@ -48,10 +52,10 @@ export const AuthContextProvider = (props) => {
   return (
     <AuthContext.Provider
       value={{
-        isLogged: Boolean(user),
+        isLogged,
         user,
         loginHandler,
-        logoutHandler,
+        logout,
       }}
     >
       {props.children}

@@ -10,8 +10,10 @@ function App() {
     <AuthContextProvider>
       <UserContextProvider>
         <SkillContextProvider>
-          <Navbar />
-          <Routes />
+          <div className="app-container">
+            <Navbar />
+            <Routes />
+          </div>
         </SkillContextProvider>
       </UserContextProvider>
     </AuthContextProvider>

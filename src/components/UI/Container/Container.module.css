@@ -1,5 +1,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: var(--navbar-background);
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 5px var(--grey);
 }

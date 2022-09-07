@@ -11,12 +11,12 @@ const LoginForm = (props) => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
-  function changeUserInputHandler(event) {
-    setUser(event.target.value);
+  function changeUserInputHandler(value) {
+    setUser(value);
   }
 
-  function changePasswordInputHandler(event) {
-    setPassword(event.target.value);
+  function changePasswordInputHandler(value) {
+    setPassword(value);
   }
 
   function formSubmitHandler(event) {
@@ -34,15 +34,13 @@ const LoginForm = (props) => {
               Create your profile and share your programming skills!
             </p>
             <Input
-              onChange={changeUserInputHandler}
+              onChangeInputValue={changeUserInputHandler}
               placeholder="example"
-              value={user}
             />
             <Input
               type="password"
-              onChange={changePasswordInputHandler}
+              onChangeInputValue={changePasswordInputHandler}
               placeholder="*******"
-              value={password}
             />
             <p>Not a user? Register</p>
             <Button type="submit" button_text="Login" />

@@ -7,6 +7,7 @@ const Input = (props) => {
 
   const changeInputValueHandler = (e) => {
     const value = e.target.value;
+    console.log(value);
     props.onChangeInputValue(value);
     setInputValue(value);
     if (value.trim() === "") {
